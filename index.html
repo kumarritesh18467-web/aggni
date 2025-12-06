@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aggni Appliances — Shop</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --accent:#ff6b35; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+      --radius:14px; --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#fbfcff 0%,var(--bg) 100%);color:#111;display:flex;justify-content:center;padding:36px}
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff874f);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(255,107,53,0.18)}
+    h1{font-size:20px;margin:0}
+    .subtitle{color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(16,24,40,0.06);display:flex;flex-direction:column;gap:12px}
+    .imgwrap{height:180px;border-radius:12px;background:linear-gradient(180deg, #fff 0%, #fbfbfb 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .imgwrap img{max-width:100%;max-height:100%;object-fit:contain}
+    .info{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+    .title{font-weight:600}
+    .price{font-weight:700;color:var(--accent)}
+    .desc{color:var(--muted);font-size:13px}
+
+    .actions{display:flex;gap:10px;margin-top:auto}
+    .btn{flex:1;padding:10px 12px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:1px solid #e6e8ee;color:var(--muted)}
+
+    .floating-whatsapp{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:linear-gradient(180deg,#25D366,#1AA05A);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.18);cursor:pointer}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small helper */
+    .badge{background:rgba(255,107,53,0.08);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AA</div>
+        <div>
+          <h1>Aggni Appliances</h1>
+          <div class="subtitle">Quality home appliances · Fast WhatsApp ordering</div>
+        </div>
+      </div>
+      <div class="badge">All Items on sale</div>
+    </header>
+
+    <main>
+      <section class="grid" id="products">
+        <!-- Product 1 -->
+        <article class="card" data-name="Aggni Kettle 1.8L" data-price="599">
+          <div class="imgwrap"><img src="1pinlkettel copy.jpg" alt="Aggni Kettle"></div>
+          <div class="info">
+            <div>
+              <div class="title">Aggni Kettle 1.8L</div>
+              <div class="desc">Fast-boil stainless steel electric kettle with auto shut-off.</div>
+            </div>
+            <div class="price">₹599</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="copyLink(event)">Share</button>
+            <button class="btn btn-primary" onclick="orderWhatsApp(event)">Buy on WhatsApp</button>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card" data-name="Aggni Mixer Grinder" data-price="2499">
+          <div class="imgwrap"><img src="mixer.jpg" alt="Aggni Mixer"></div>
+          <div class="info">
+            <div>
+              <div class="title">Aggni Mixer Grinder</div>
+              <div class="desc">Powerful 750W motor with 3 stainless jars for grinding and blending.</div>
+            </div>
+            <div class="price">₹1699</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="copyLink(event)">Share</button>
+            <button class="btn btn-primary" onclick="orderWhatsApp(event)">Buy on WhatsApp</button>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card" data-name="Aggni Induction Cooktop" data-price="1999">
+          <div class="imgwrap"><img src="1111.jpg" alt="Aggni Induction"></div>
+          <div class="info">
+            <div>
+              <div class="title">Aggni Induction Cooktop</div>
+              <div class="desc">Compact induction hob with multiple temperature presets and timer.</div>
+            </div>
+            <div class="price">₹1,999</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="copyLink(event)">Share</button>
+            <button class="btn btn-primary" onclick="orderWhatsApp(event)">Buy on WhatsApp</button>
+          </div>
+        </article>
+
+
+
+
+
+
+
+        <!-- Product 3 -->
+        <article class="card" data-name="Aggni 32inc Andoride TV" data-price="6599">
+          <div class="imgwrap"><img src="32-inch-smart-android-led-tv.jpg" alt="Aggni Induction"></div>
+          <div class="info">
+            <div>
+              <div class="title">Aggni 32inc Andoride Tv </div>
+              <div class="desc">Compact induction hob with multiple temperature presets and timer.</div>
+            </div>
+            <div class="price">₹6599</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-outline" onclick="copyLink(event)">Share</button>
+            <button class="btn btn-primary" onclick="orderWhatsApp(event)">Buy on WhatsApp</button>
+          </div>
+        </article>
+
+
+
+
+
+
+      </section>
+
+      <div class="footer">Prefer a personal quote? Click the green WhatsApp button at the bottom-right.</div>
+    </main>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <div class="floating-whatsapp" id="floatWA" title="Message us on WhatsApp" onclick="openWhatsAppContact()">
+    <!-- simple WhatsApp SVG -->
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.6 11.6 0 0012 0C5.373 0 0 5.373 0 12c0 2.115.558 4.103 1.616 5.866L0 24l6.367-1.66A11.932 11.932 0 0012 24c6.627 0 12-5.373 12-12 0-3.197-1.248-6.188-3.48-8.52z" fill="white" opacity="0.08"/>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.769.967-.942 1.166-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.058-.173-.297-.018-.458.13-.606.133-.132.297-.347.446-.52.149-.173.198-.298.297-.497.099-.198.05-.372-.024-.52-.074-.149-.672-1.611-.921-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487 0 0 .09.039.162.039.062 0 .198-.02.297-.074.099-.05 1.758-.807 2.006-1.01.248-.198.248-.367.173-.52-.074-.148-.273-.247-.57-.396z" fill="white"/>
+    </svg>
+  </div>
+
+  <script>
+    // Replace with your WhatsApp number (international format, no + or leading zeros). Example for India: 919812345678
+    const WA_NUMBER = '918521500173';
+
+    function orderWhatsApp(e){
+      // find the product card
+      const card = e.target.closest('.card');
+      const name = card.dataset.name;
+      const price = card.dataset.price;
+      const message = encodeURIComponent(`Hello Aggni Appliances, I'm interested in *${name}* priced at ₹${price}. Can you share availability and delivery details?`);
+      const url = `https://wa.me/${8521500173}?text=${message}`;
+      window.open(url, '_blank');
+    }
+
+    function openWhatsAppContact(){
+      const message = encodeURIComponent('Hello Aggni Appliances, I would like to know more about your products.');
+      window.open(`https://wa.me/${8521500173}?text=${message}`, '_blank');
+    }
+
+    function copyLink(e){
+      const card = e.target.closest('.card');
+      const name = card.dataset.name;
+      const shareUrl = `${location.origin}${location.pathname}#${encodeURIComponent(name)}`;
+      navigator.clipboard?.writeText(shareUrl).then(()=>{
+        alert('Product link copied! Paste it in WhatsApp to share.');
+      }).catch(()=>{
+        prompt('Copy this link:', shareUrl);
+      });
+    }
+
+    // Optional: scroll to product if URL has hash
+    window.addEventListener('load', ()=>{
+      const hash = decodeURIComponent(location.hash.substring(1));
+      if(hash){
+        const el = Array.from(document.querySelectorAll('.card')).find(c=>c.dataset.name===hash);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    });
+  </script>
+</body>
+</html>
